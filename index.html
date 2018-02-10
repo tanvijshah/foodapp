@@ -38,16 +38,16 @@ body, html {
 }
 
 #Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
+#Map {background-color: green;}
+// #Contact {background-color: blue;}
 #About {background-color: orange;}
 </style>
 </head>
 <body>
 
 <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('Map', this, 'green')" id="defaultOpen">Map</button>
+// <button class="tablink" onclick="openPage('Contact', this, 'blue')">Abount</button>
 <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
 
 <div id="Home" class="tabcontent">
@@ -55,15 +55,18 @@ body, html {
   <p>Home is where the heart is..</p>
 </div>
 
-<div id="News" class="tabcontent">
+
+<div id="Map" class="tabcontent">
   <h3>News</h3>
   <p>Some news this fine day!</p> 
-</div>
+</div> 
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
+
+//<div id="Contact" class="tabcontent">
+ // <h3>Contact</h3>
+ // <p>Get in touch, or swing by for a cup of coffee.</p>
+//</div>
+ //
 
 <div id="About" class="tabcontent">
   <h3>About</h3>
