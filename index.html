@@ -120,6 +120,7 @@ function clockthing() {
 	if (date != null) {
 		var food = prompt("Now enter name of food", "");
 			if (food != null) {
+				document.getElementById("counter").innerHTML = food;
 				var countDownDate = new Date(date).getTime();
 				var x = setInterval(function() {
 					var now = new Date().getTime();
@@ -129,7 +130,6 @@ function clockthing() {
 					var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
 					var minutes = Math.floor((distance%(1000*60*60)) / (1000*60));
 					var seconds = Math.floor((distance%(1000*60))/1000);
-					document.getElementById("counter").innerHTML = food;
 					document.getElementById("counter").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 					if (distance < 0) {
 						clearInterval(x);
