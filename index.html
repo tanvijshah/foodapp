@@ -85,6 +85,10 @@ body, html {
 <div id="Mapp" class="tabcontent">
 <div id="map" style="width:400px;height:400px;background:yellow"></div>
 <script>
+	
+var map;
+var infowindow;
+
 function myMap() {
 var mapOptions = {
     center: new google.maps.LatLng(51.5, -0.12),
@@ -92,13 +96,46 @@ var mapOptions = {
     mapTypeId: google.maps.MapTypeId.HYBRID
 }
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	
+var request = {location: center, radius: 8047, types: ['food bank']};
+
+infowindow = new google.maps.InfoWindow();
+
+var service = new google.maps.places.PlacesService(map);
+
+service.nearbySearch(request, callback2);
+	
 }
+
+function callback2(results, status) {
+	if(status == google.maps.places.PlacesServiceStatus.OK){
+		for(var i=0; i < results.length; i++){
+			createMarker(results[i]);
+		}
+	}
+}
+
+function createMarker(place) {
+	var placeLoc = place.geometry.location;
+	var marker = new google.maps.Marker({
+		map: map,
+		position: place.geometry.location
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(place.name);
+		infowindow.open(map, this);
+	});
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+	
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpbtG-Opob3AviVsGlNeONrGr40vDmZZY&callback=myMap"></script>	
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+-->  
+	
 </div>
 	
 
