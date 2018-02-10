@@ -1,0 +1,112 @@
+
+<h1>When does my food expire?</h1>
+
+<p id="counter"></p>
+
+<button onclick="clockthing()">Click here to enter new expiry date</button>
+
+<script>
+function clockthing() {
+	var date = prompt("Please enter a date", "");
+	if (date != null) {
+		var food = prompt("Now enter name of food", "");
+			if (food != null) {
+				var countDownDate = new Date(date).getTime();
+				var x = setInterval(function() {
+					var now = new Date().getTime();
+					var distance = countDownDate - now;
+	
+					var days = Math.floor(distance / (1000*60*60*24));
+					var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+					var minutes = Math.floor((distance%(1000*60*60)) / (1000*60));
+					var seconds = Math.floor((distance%(1000*60))/1000);
+					document.getElementById("counter").innerHTML = food;
+					document.getElementById("counter").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+					if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("counter").innerHTML = "EXPIRED"
+					}
+				}, 1000);
+
+			}
+	}
+}
+</script>
+////// USE THE CODE BELOW FOR THE REGISTRATION/LOGIN TAB ///////
+
+<h1>Login</h1>
+
+<button onclick="login()">Click here</button>
+
+var info = [];
+
+<p id="id"></p>
+
+<script>
+function login() {
+	var u1 = prompt("Please enter your username", "");
+	if (u1 != null) {
+		var p1 = prompt("Now enter your password", "");
+			if ((p1 != null) && (info[u1] == p1));
+				document.getElementById("id").innerHTML = "Welcome back!";
+			}
+	}
+}
+<h1>Register</h1>
+</script>
+
+<button onclick="register()">Click here to register</button>
+
+<script>
+function register() {
+	var u2 = prompt("Please enter a username", "");
+	if (u2 != null) {
+		var p2 = prompt("Please enter a password", "");
+			if (p2 != null);
+				info[u2] = p2;
+				document.getElementById("id").innerHTML = "Thank you for registering!";
+			}
+	}
+}
+</script>
+
+///////// USE CODE BELOW FOR DIFFERENT TAB //////////////
+
+<h1>Our mission</h1>
+<p>As undergraduates, we witness a lot of waste on our campus. We realize that colleges everywhere are contributing large masses 
+<p>of food waste to landfills, which is very damaging to the environment. We aim to reduce the amount of waste produced by colleges</p>
+<p>by providing simple and local opportunities for colleges to make use of both their expired and non-expired ingredients.</p>
+<p>By providing a networking system to connect colleges to local composting sites, gardens, and food banks, we hope to significantly</p>
+<p>cut down the amount of food that gets delivered to landfills.</p>
+
+<h1>What should I do with my food?</h1>
+
+<h2>Food is close to expiration date / Food is expired:</h2>
+
+<p>You can send your food to the following types of organizations:</p>
+<ul>
+	<li>Composting sites</li>
+	<li>Community gardens</li>
+
+<h2>Food can still be used:</h2>
+
+<p>You can donate your food to the following types of organizations:</p>
+<ul>
+	<li>Food banks</li>
+	<li>Soup kitchens</li>
+
+
+/////////////// USE CODE BELOW FOR FOOD EXPIRY TRACKER TAB ///////////
+
+
+
+
+
+
+
+
+
+
+
+
+
