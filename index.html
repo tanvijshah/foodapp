@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
+<!-- <script>
 function myMap() {
 
 var mapProp= {
@@ -13,7 +13,7 @@ var mapProp= {
 }
 </script>   
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=IzaSyBYj01r9Kq3pxRtykXwf6pNbxbJQ-JfMkA&callback=myMap"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=IzaSyBYj01r9Kq3pxRtykXwf6pNbxbJQ-JfMkA&callback=myMap"></script> -->
 <style>
 * {box-sizing: border-box}
 
@@ -50,7 +50,7 @@ body, html {
 }
 
 #Home {background-color: red;}
-#Map {background-color: green;}
+#Mapp {background-color: green;}
 #Expire {background-color: purple;}
 #About {background-color: orange;}
 </style>
@@ -58,7 +58,7 @@ body, html {
 <body>
 
 <button class="tablink" onclick="openPage('Home', this, 'red')"id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('Map', this, 'green')">Map</button>
+<button class="tablink" onclick="openPage('Mapp', this, 'green')">Map</button>
 <button class="tablink" onclick="openPage('Expire', this, 'purple')">Expire</button>
 <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
                                                                    
@@ -76,12 +76,31 @@ body, html {
 </div>
 
 
-<div id="Map" class="tabcontent">
+<!-- <div id="Map" class="tabcontent">
 <h1>Locations for Foooooood Delivery</h1>
 <div id="googleMap" style="width:100%;height:400px;"></div>
    <p> hi. </p>
 </div> 
-
+ -->
+<div id="Mapp" class="tabcontent">
+<div id="map" style="width:400px;height:400px;background:yellow"></div>
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.12),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=IzaSyBYj01r9Kq3pxRtykXwf6pNbxbJQ-JfMkA&callback=myMap"></script>	
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+</div>
+	
 
 <div id="About" class="tabcontent">
 <h2>About</h2>    
